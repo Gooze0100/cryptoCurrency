@@ -1,0 +1,19 @@
+<ng-template [ngIf]="loading" [ngIfElse]="loadChart">
+  <div class="d-flex justify-content-center align-items-center loading-box">
+    <div
+      class="spinner-border text-light"
+      role="status"
+      style="width: 4rem; height: 4rem"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loadChart>
+  <div class="chart-box">
+    <canvasjs-stockchart
+      [options]="stockChartOptions"
+      [styles]="{ width: '100%', height: '400px' }"
+    ></canvasjs-stockchart>
+  </div>
+</ng-template>

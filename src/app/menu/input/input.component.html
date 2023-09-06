@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid dropdown-box">
+    <form
+      class="d-flex flex-column form-box"
+      (ngSubmit)="onSubmit()"
+      #form="ngForm"
+    >
+      <div
+        *ngIf="
+          cryptoCurrency.invalid &&
+          (cryptoCurrency.touched || cryptoCurrency.dirty)
+        "
+        class="help-block mb-1"
+      >
+        <div *ngIf="cryptoCurrency.errors?.['required']">
+          <b> Crypto currency field cannot be empty! </b>
+        </div>
+        <div *ngIf="cryptoCurrency.errors?.['maxlength']">
+          <b>
+            Crypto currency name must be shorter then 30 characters long
+            including spaces!
+          </b>
+        </div>
+      </div>
+      <div class="d-flex flex-dir dropdown">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Enter crypto currency"
+          required
+          minlength="1"
+          maxlength="30"
+          ngModel
+          name="cryptoCurrency"
+          #cryptoCurrency="ngModel"
+          autocomplete="off"
+        />
+        <button
+          class="btn btn-custom"
+          type="submit"
+          [disabled]="!cryptoCurrency.valid"
+        >
+          Search
+        </button>
+        <div
+          class="dropdown-menu"
+          [ngClass]="{
+            openDropDown: isSubmitted
+          }"
+        >
+          <div
+            *ngIf="isLoading"
+            class="d-flex justify-content-center align-items-center spinner-box"
+          >
+            <div
+              class="spinner-border spinner-color"
+              role="status"
+              style="width: 4rem; height: 4rem"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          <div *ngIf="!isLoading">
+            <h3 class="shadow-sm bg-body titleInfo">
+              {{ title }}
+            </h3>
+            <button
+              type="button"
+              class="dropdown-item"
+              *ngFor="let cryptoCurrency of searchedResults"
+              routerLinkActive="active"
+              [routerLink]="['/chart', cryptoCurrency]"
+              (click)="isSubmitted = false; logSelectedValue(cryptoCurrency)"
+            >
+              {{ cryptoCurrency }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>

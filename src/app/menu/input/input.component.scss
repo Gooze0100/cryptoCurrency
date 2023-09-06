@@ -1,0 +1,131 @@
+nav {
+  &.fixed {
+    position: fixed;
+    width: 100%;
+    transition: 0.2s linear;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+  &.notFixed {
+    position: static;
+    transition: 0.2s linear;
+    top: -50px;
+  }
+}
+
+.form-box {
+  width: 25%;
+  transition: 0.3s all ease-out;
+  .flex-dir {
+    flex-direction: row;
+    input {
+      margin-right: 8px;
+    }
+  }
+  .help-block {
+    color: crimson;
+  }
+  .btn-custom {
+    background-color: #0e6ba8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      background-color: #147dc4;
+    }
+  }
+  .dropdown-menu {
+    padding: 0;
+    overflow: auto;
+    border-radius: 0;
+    width: 100%;
+    top: 50px;
+    height: 500px;
+    scroll-behavior: smooth;
+
+    .spinner-box {
+      height: 490px;
+
+      .spinner-color {
+        color: #0e6ba8;
+      }
+    }
+
+    &.openDropDown {
+      display: block;
+    }
+
+    .titleInfo {
+      padding-left: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 1400px) {
+  form.form-box {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  form.form-box {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  form.form-box {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  form.form-box {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  form.form-box {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  form.form-box {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  form.form-box {
+    width: 100%;
+    div.flex-dir {
+      flex-direction: column;
+      input {
+        margin-bottom: 8px;
+        margin-right: 0;
+      }
+      .dropdown-menu {
+        top: 95px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  form.form-box {
+    div.flex-dir {
+      flex-direction: column;
+      input {
+        margin-bottom: 8px;
+        margin-right: 0;
+      }
+      .dropdown-menu {
+        top: 95px;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.not-found {
+  height: 100vh;
+  background-color: black;
+  position: relative;
+  h1 {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    font-size: 52px;
+  }
+  svg {
+    width: 100%;
+  }
+}

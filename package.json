@@ -18,6 +18,11 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@canvasjs/angular-stockcharts": "^1.0.3",
+    "@canvasjs/stockcharts": "^1.7.19",
+    "bootstrap": "^5.3.1",
+    "ccxt": "^4.0.80",
+    "chart.js": "^4.4.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
