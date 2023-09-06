@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 
-import binance from 'ccxt/js/src/binance';
+import { binance } from 'ccxt';
 
 @Component({
   selector: 'app-chart',
