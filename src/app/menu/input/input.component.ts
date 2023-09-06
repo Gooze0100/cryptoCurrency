@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { LogUserService } from 'src/app/services/log-user.service';
 
-import { binance } from 'ccxt';
+import binance from 'ccxt/js/src/binance';
 
 @Component({
   selector: 'app-input',

@@ -9,7 +9,7 @@ import { InputComponent } from './menu/input/input.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CanvasJSAngularStockChartsModule } from '@canvasjs/angular-stockcharts';
+import { CanvasJSAngularStockChartsModule } from '@canvasjs/angular-stockcharts/lib/angular-stockcharts.module';
 import { ChartComponent } from './main/chart/chart.component';
 
 @NgModule({
